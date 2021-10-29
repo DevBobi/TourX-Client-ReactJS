@@ -10,7 +10,8 @@ import Home from './components/Home/Home/Home';
 import AuthProvider from './context/AuthProvider';
 import Offerings from './components/Home/Offerings/Offerings';
 import Login from './components/Register/Login/Login';
-
+import PrivateRoute from './components/Register/PrivateRoute/PrivateRoute';
+import ServiceDetail from './components/Home/ServiceDetail/ServiceDetail';
 
 function App() {
   return (
@@ -25,12 +26,18 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/offerings">
-              <Offerings></Offerings>
-            </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="/offerings">
+              <Offerings></Offerings>
+            </Route>
+            {/* <PrivateRoute exact path="/placeorder/:serviceId">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute> */}
+            <PrivateRoute exact path="/serviceDetails/:serviceId">
+              <ServiceDetail></ServiceDetail>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>

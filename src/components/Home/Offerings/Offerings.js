@@ -13,8 +13,8 @@ const Offerings = () => {
 
     return (
         <div className="m-5 p-4">
-            <h2>Trending, Best Selling Tours And</h2>
-            <h3>Fun Destinations</h3>
+            <h1>Perfect <strong className="text-danger fs-1">Tour Packages</strong></h1>
+            <p>Travel has helped us to understand the meaning of life and it has helped us <br /> become better people. Each time we travel, we see the world with new eyes.</p>
 
             <Row xs={1} md={3} className="gy-4">
                 {

@@ -8,8 +8,8 @@ const Service = ({ service }) => {
     const history = useHistory();
 
     const handleDetails = (id) => {
-        const uri = `/serviceDetail/${id}`
-        history.push(uri)
+        const uri = `/serviceDetails/${id}`;
+        history.push(uri);
     }
     return (
         <div>

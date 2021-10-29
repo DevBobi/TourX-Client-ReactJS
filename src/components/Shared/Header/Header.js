@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/foooter.png'
+import logo from '../../../assets/foooter.png';
 import useAuth from '../../../hooks/useAuth';
 import { FiLogOut } from "react-icons/fi";
 import { FaSignInAlt } from "react-icons/fa";
@@ -54,19 +54,20 @@ const Header = () => {
                                     My Orders
                                 </NavLink>
                             </Nav.Link>
-                            {
-                                user.email ?
-                                    <Button onClick={logOut} variant="danger" className="  rounded-pill px-3 fw-bolder">Log Out <FiLogOut /></Button>
-                                    :
-                                    <Link to="/login">
-                                        <Button variant="info" className="mx-2 rounded-pill px-3 fw-bolder">Log In <FaSignInAlt /></Button>
-                                    </Link>
-                            }
+                            <Nav.Link className="nav-menu">
+                                {
+                                    user.email ?
+                                        <Button onClick={logOut} variant="danger" className="  rounded-pill px-3 fw-bolder">Log Out <FiLogOut /></Button>
+                                        :
+                                        <Link to="/login">
+                                            <Button variant="info" className="mx-2  px-3 fw-bolder">Login <FaSignInAlt /></Button>
+                                        </Link>
+                                }
 
-                            {
-                                user?.email && user?.photoURL ? <img width="40px" className="rounded-circle ms-3 user" src={user?.photoURL} alt="" /> : <span className="displayName">{user.displayName}</span>
-                            }
-
+                                {
+                                    user?.email && user?.photoURL ? <img width="40px" className="rounded-circle ms-3 user" src={user?.photoURL} alt="" /> : <span className="displayName">{user.displayName}</span>
+                                }
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
