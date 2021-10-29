@@ -1,0 +1,29 @@
+.login-area{
+    margin: 0 auto;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.link a{
+    text-decoration: none;
+    color: red;
+}
+
+.g-btn{
+    background-color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgb(128, 127, 127);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }

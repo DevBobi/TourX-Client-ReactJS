@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "image": "https://htmldesigntemplates.com/html/yatriiworld/images/trending/trending1.jpg",
+        "title": "Stonehenge, Windsor Castle, and Bath from London",
+        "desc": "A wonderful little cottage right on the seashore - perfect for exploring.",
+        "price": 10
+    },
+    {
+        "id": 2,
+        "image": "https://htmldesigntemplates.com/html/yatriiworld/images/trending/trending1.jpg",
+        "title": "Stonehenge, Windsor Castle, and Bath from London",
+        "desc": "A wonderful little cottage right on the seashore - perfect for exploring.",
+        "price": 10
+    },
+    {
+        "id": 3,
+        "image": "https://htmldesigntemplates.com/html/yatriiworld/images/trending/trending1.jpg",
+        "title": "Stonehenge, Windsor Castle, and Bath from London",
+        "desc": "A wonderful little cottage right on the seashore - perfect for exploring.",
+        "price": 10
+    }
+]
