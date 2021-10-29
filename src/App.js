@@ -12,6 +12,9 @@ import Offerings from './components/Home/Offerings/Offerings';
 import Login from './components/Register/Login/Login';
 import PrivateRoute from './components/Register/PrivateRoute/PrivateRoute';
 import ServiceDetail from './components/Home/ServiceDetail/ServiceDetail';
+import NotFound from './components/NotFound/NotFound';
+import AddService from './components/AddService/AddService';
+import MyOrders from './components/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -32,12 +35,18 @@ function App() {
             <Route path="/offerings">
               <Offerings></Offerings>
             </Route>
-            {/* <PrivateRoute exact path="/placeorder/:serviceId">
-              <PlaceOrder></PlaceOrder>
-            </PrivateRoute> */}
+            <Route path="/addService">
+              <AddService></AddService>
+            </Route>
             <PrivateRoute exact path="/serviceDetails/:serviceId">
               <ServiceDetail></ServiceDetail>
             </PrivateRoute>
+            <Route path="/myOrders">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

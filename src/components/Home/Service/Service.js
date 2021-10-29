@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { id, title, desc, image } = service;
+    const { _id, name, description, img } = service;
 
     const history = useHistory();
 
@@ -14,14 +14,14 @@ const Service = ({ service }) => {
     return (
         <div>
             <Card className=" m-4 service border-dark" >
-                <Card.Img variant="top" className="img rounded" src={image} />
+                <Card.Img variant="top" className="img rounded" src={img} />
                 <Card.Body className="p-4">
-                    <Card.Title>{title}</Card.Title>
+                    <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                        {desc}
+                        {description}
                     </Card.Text>
 
-                    <Button onClick={() => handleDetails(id)} variant="dark">Book Now</Button>
+                    <Button onClick={() => handleDetails(_id)} variant="dark">Book Now</Button>
 
                 </Card.Body>
             </Card>

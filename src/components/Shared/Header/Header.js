@@ -44,7 +44,7 @@ const Header = () => {
 
                             <Nav.Link className="nav-menu">
                                 <NavLink as={Link}
-                                    to="/courses"
+                                    to="/myOrders"
                                     style={{ textDecoration: "none", color: "#ff9e32" }}
                                     activeStyle={{
                                         fontWeight: "bold",
@@ -52,6 +52,18 @@ const Header = () => {
                                     }}
                                 >
                                     My Orders
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link className="nav-menu">
+                                <NavLink as={Link}
+                                    to="/addService"
+                                    style={{ textDecoration: "none", color: "#ff9e32" }}
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white",
+                                    }}
+                                >
+                                    Ad Service
                                 </NavLink>
                             </Nav.Link>
                             <Nav.Link className="nav-menu">

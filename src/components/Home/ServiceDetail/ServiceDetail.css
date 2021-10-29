@@ -1,0 +1,12 @@
+.add-order form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-order form input, textarea{
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
