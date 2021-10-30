@@ -13,7 +13,7 @@ const PlaceOrder = () => {
     const [singleService, setSingleService] = useState({})
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://gentle-island-49422.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setDetails(data))
     }, []);
@@ -27,9 +27,8 @@ const PlaceOrder = () => {
 
     const onSubmit = data => {
         data.status = "pending";
-        data.email = user?.email;
         data.booked = singleService;
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://gentle-island-49422.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Order Placed Successfully!');
@@ -43,13 +42,32 @@ const PlaceOrder = () => {
                 <h3>Please Add info To Place Order..</h3>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="forms">
-                    <input {...register("username")} required type="text" placeholder="Username" />
-                    <input {...register("email",)} required type="email" placeholder={user?.email} disabled />
-                    <input {...register("date",)} type="date" placeholder="Date" />
-                    <input {...register("address",)} required type="text" placeholder="Address" />
-                    <input type="phone-number" {...register("phone")} placeholder="Phone" />
+                    <input
+                        {...register("username")}
+                        type="text"
+                        value={user.displayName} />
+                    <input
+                        {...register("email",)}
+                        type="email"
+                        value={user?.email} />
+                    <input
+                        {...register("date", { required: true })}
+                        placeholder="date"
+                        defaultValue={new Date()}
+                        className="p-2 m-2"
+                    />
+                    <input
+                        {...register("address",)}
+                        required type="text"
+                        placeholder="Address"
+                        className="p-2 m-2"
+                    />
+                    <input
+                        type="phone-number"
+                        {...register("phone")}
+                        placeholder="Phone"
+                        className="p-2 m-2" />
                     <Button variant="secondary" type="submit">Place Order  </Button>
-                    {/* <input type="submit" /> */}
                 </form>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">

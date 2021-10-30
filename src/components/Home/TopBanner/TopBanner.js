@@ -4,7 +4,7 @@ import banner from '../../../assets/bannner/banner2.jpg';
 
 const TopBanner = () => {
     return (
-        <div>
+        <div >
             <Carousel variant="dark">
                 <Carousel.Item>
                     <img
@@ -12,9 +12,9 @@ const TopBanner = () => {
                         src={banner}
                         alt="First slide"
                     />
-                    <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <Carousel.Caption className="text-light text-start mb-5">
+                        <h2>Enjoy The Travel With <br /> <h1>Tour-X</h1></h2>
+                        <p>A journey with 1000 miles starts with a single step.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -23,9 +23,9 @@ const TopBanner = () => {
                         src={banner}
                         alt="Second slide"
                     />
-                    <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <Carousel.Caption className=" text-top">
+                        <h2>Get Ready To Travel<br /> <h1 className="text-warning">The World</h1></h2>
+                        <p>A journey with 1000 miles starts with a single step.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

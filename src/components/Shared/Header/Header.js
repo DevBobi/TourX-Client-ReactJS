@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavLink } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/foooter.png';
 import useAuth from '../../../hooks/useAuth';
@@ -44,54 +44,74 @@ const Header = () => {
 
                             <Nav.Link className="nav-menu">
                                 <NavLink as={Link}
-                                    to="/myOrders"
+                                    to="/about"
                                     style={{ textDecoration: "none", color: "#ff9e32" }}
                                     activeStyle={{
                                         fontWeight: "bold",
                                         color: "white",
                                     }}
                                 >
-                                    My Orders
+                                    About
                                 </NavLink>
                             </Nav.Link>
-                            <Nav.Link className="nav-menu">
-                                <NavLink as={Link}
-                                    to="/addService"
-                                    style={{ textDecoration: "none", color: "#ff9e32" }}
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "white",
-                                    }}
-                                >
-                                    Ad Service
-                                </NavLink>
-                            </Nav.Link>
-                            <Nav.Link className="nav-menu">
-                                <NavLink as={Link}
-                                    to="/addService"
-                                    style={{ textDecoration: "none", color: "#ff9e32" }}
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "white",
-                                    }}
-                                >
-                                    Mange Users
-                                </NavLink>
-                            </Nav.Link>
+
                             <Nav.Link className="nav-menu">
                                 {
                                     user?.email ?
-                                        <Button onClick={logOut} variant="danger" className=" rounded-pill px-3 fw-bolder">Log Out <FiLogOut /></Button>
+                                        <div>
+                                            <NavDropdown title={user?.displayName} id="basic-nav-dropdown">
+
+                                                <NavDropdown.Item href="#action/3.3">
+                                                    <NavLink as={Link}
+                                                        className=""
+                                                        to="/myOrders"
+                                                        style={{ textDecoration: "none", color: "black" }}
+                                                        activeStyle={{
+                                                            fontWeight: "bolder",
+                                                            color: "goldenRod",
+                                                        }}
+                                                    >
+                                                        My Orders
+                                                    </NavLink>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Item href="#action/3.3">
+                                                    <NavLink as={Link}
+                                                        className=""
+                                                        to="/manageOrders"
+                                                        style={{ textDecoration: "none", color: "black" }}
+                                                        activeStyle={{
+                                                            fontWeight: "bolder",
+                                                            color: "goldenRod",
+                                                        }}
+                                                    >
+                                                        Manage Orders
+                                                    </NavLink>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Item href="#action/3.3">
+                                                    <NavLink as={Link}
+                                                        className=""
+                                                        to="/addService"
+                                                        style={{ textDecoration: "none", color: "black" }}
+                                                        activeStyle={{
+                                                            fontWeight: "bolder",
+                                                            color: "goldenRod",
+                                                        }}
+                                                    >
+                                                        Add Service
+                                                    </NavLink>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Divider />
+                                                <Button onClick={logOut} variant="dark" className="mx-2 rounded-pill px-3 fw-bolder">Log Out <FaSignInAlt /></Button>
+                                            </NavDropdown>
+
+                                        </div>
                                         :
                                         <Link to="/login">
-                                            <Button variant="info" className="mx-2 rounded-pill px-3 fw-bolder">Login <FaSignInAlt /></Button>
+                                            <Button variant="info" className="rounded-pill px-3 fw-bolder">Log In</Button>
                                         </Link>
                                 }
-
-                                {
-                                    user?.email && user?.photoURL ? <img width="40px" className="rounded-circle ms-3 user" src={user?.photoURL} alt="" /> : <span className="displayName">{user.displayName}</span>
-                                }
                             </Nav.Link>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

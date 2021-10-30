@@ -15,6 +15,9 @@ import NotFound from './components/NotFound/NotFound';
 import AddService from './components/AddService/AddService';
 import MyOrders from './components/MyOrders/MyOrders';
 import PlaceOrder from './components/Home/PlaceOrder/PlaceOrder';
+import Footer from './components/Shared/Footer/Footer';
+import About from './components/Home/About/About';
+import ManageOrders from './components/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/about">
+              <About></About>
             </Route>
             <Route path="/login">
               <Login></Login>
@@ -44,10 +50,14 @@ function App() {
             <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
             </PrivateRoute>
+            <PrivateRoute path="/manageOrders">
+              <ManageOrders></ManageOrders>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
