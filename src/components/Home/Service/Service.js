@@ -8,7 +8,7 @@ const Service = ({ service }) => {
     const history = useHistory();
 
     const handleDetails = (id) => {
-        const uri = `/serviceDetails/${id}`;
+        const uri = `/orderDetail/${id}`;
         history.push(uri);
     }
     return (

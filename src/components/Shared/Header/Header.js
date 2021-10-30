@@ -67,12 +67,24 @@ const Header = () => {
                                 </NavLink>
                             </Nav.Link>
                             <Nav.Link className="nav-menu">
+                                <NavLink as={Link}
+                                    to="/addService"
+                                    style={{ textDecoration: "none", color: "#ff9e32" }}
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white",
+                                    }}
+                                >
+                                    Mange Users
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link className="nav-menu">
                                 {
-                                    user.email ?
-                                        <Button onClick={logOut} variant="danger" className="  rounded-pill px-3 fw-bolder">Log Out <FiLogOut /></Button>
+                                    user?.email ?
+                                        <Button onClick={logOut} variant="danger" className=" rounded-pill px-3 fw-bolder">Log Out <FiLogOut /></Button>
                                         :
                                         <Link to="/login">
-                                            <Button variant="info" className="mx-2  px-3 fw-bolder">Login <FaSignInAlt /></Button>
+                                            <Button variant="info" className="mx-2 rounded-pill px-3 fw-bolder">Login <FaSignInAlt /></Button>
                                         </Link>
                                 }
 

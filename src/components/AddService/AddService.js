@@ -18,12 +18,12 @@ const AddService = () => {
     }
 
     return (
-        <div className="add-service">
-            <h2>Please add a service</h2>
+        <div className="add-service m-5">
+            <h2 className="my-5">Please add a service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name",)}
+                <input {...register("Title",)}
                     placeholder="Name" />
-                <textarea {...register("description")} placeholder="Description" />
+                <input {...register("description")} placeholder="Description" />
                 <input type="number" {...register("price")} placeholder="Price" />
                 <input {...register("img")} placeholder="Img Url" />
                 <input type="submit" />

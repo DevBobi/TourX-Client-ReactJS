@@ -1,15 +1,14 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
-import axios from 'axios';
-import './ServiceDetail.css';
 import useAuth from '../../../hooks/useAuth';
+import './PlaceOrder.css';
 
-const ServiceDetail = () => {
+const PlaceOrder = () => {
     const { user } = useAuth();
-    const { serviceId } = useParams();
+    const { orderId } = useParams();
     const [details, setDetails] = useState([]);
     const [singleService, setSingleService] = useState({})
 
@@ -20,50 +19,51 @@ const ServiceDetail = () => {
     }, []);
 
     useEffect(() => {
-        const matchedService = details?.find(service => service._id == serviceId)
+        const matchedService = details?.find(service => service._id == orderId)
         setSingleService(matchedService)
     }, [details]);
 
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
+        data.status = "pending";
+        data.email = user?.email;
+        data.booked = singleService;
         axios.post('http://localhost:5000/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Order Placed');
+                    alert('Order Placed Successfully!');
                     reset();
                 }
             })
     }
-
-
-
     return (
         <div className="row d-flex align-items-center container mt-5">
             <div className="col-lg-8 col-md-6 col-sm-12 add-order my-5">
                 <h3>Please Add info To Place Order..</h3>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="forms">
-                    <input {...register("name")} type="text" placeholder="Username" />
-                    <input {...register("email",)} type="email" placeholder={user?.email} />
+                    <input {...register("username")} required type="text" placeholder="Username" />
+                    <input {...register("email",)} required type="email" placeholder={user?.email} disabled />
+                    <input {...register("date",)} type="date" placeholder="Date" />
+                    <input {...register("address",)} required type="text" placeholder="Address" />
                     <input type="phone-number" {...register("phone")} placeholder="Phone" />
-                    <textarea {...register("description")} placeholder={singleService?.name} />
-                    <input type="submit" />
+                    <Button variant="secondary" type="submit">Place Order  </Button>
+                    {/* <input type="submit" /> */}
                 </form>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
                 <div className=" col-sm-12 my-4">
                     <img className="my-1 img-fluid" src={singleService?.img} alt="" />
                 </div>
-                <h2>{singleService?.name}</h2>
+                <h2>{singleService?.title}</h2>
                 <p>{singleService?.description}</p>
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                {/* <Link to="/" style={{ textDecoration: 'none' }}>
                     <Button variant="secondary">Go Home</Button>
-                </Link>
+                </Link> */}
             </div>
         </div>
     );
 };
 
-export default ServiceDetail;
+export default PlaceOrder;
