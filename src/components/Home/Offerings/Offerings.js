@@ -16,7 +16,7 @@ const Offerings = () => {
             <h1>Perfect <strong className="text-danger fs-1">Tour Packages</strong></h1>
             <p>Travel has helped us to understand the meaning of life and it has helped us <br /> become better people. Each time we travel, we see the world with new eyes.</p>
 
-            <Row xs={1} md={3} className="gy-4">
+            <Row xs={1} lg={4} md={3} className="gy-4">
                 {
                     services.map(service => <Service
                         key={service.id}

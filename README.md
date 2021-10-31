@@ -1,8 +1,11 @@
 # Tour-X
 ## Live site: https://tour-x-40f10.web.app/
+## Description
+- This is a travel manage realated website. You can use this website in proffessional purpous for you community.
+
 ## Usage_
 - This is a single page aplication website.
-- You can use this website in proffessional purpous.
+- I used Firebase authentication system.
 - This website is responsive and interactive.
 - I've used express, react router, axios, context api & more.
 - This site is developed by ©-devBobi
