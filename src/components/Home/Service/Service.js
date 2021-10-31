@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { _id, name, description, img } = service;
+    const { _id, title, description, img } = service;
 
     const history = useHistory();
 
@@ -16,7 +16,7 @@ const Service = ({ service }) => {
             <Card className=" m-4 service border-dark" >
                 <Card.Img variant="top" className="img rounded" src={img} />
                 <Card.Body className="p-4">
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>{title.slice(0, 15)}</Card.Title>
                     <Card.Text>
                         {description}
                     </Card.Text>

@@ -21,7 +21,7 @@ const AddService = () => {
         <div className="add-service m-5">
             <h2 className="my-5">Please add a service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("Title",)}
+                <input {...register("title",)}
                     placeholder="Name" />
                 <input {...register("description")} placeholder="Description" />
                 <input type="number" {...register("price")} placeholder="Price" />

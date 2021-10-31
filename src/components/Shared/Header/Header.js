@@ -54,6 +54,18 @@ const Header = () => {
                                     About
                                 </NavLink>
                             </Nav.Link>
+                            <Nav.Link className="nav-menu">
+                                <NavLink as={Link}
+                                    to="/contact"
+                                    style={{ textDecoration: "none", color: "#ff9e32" }}
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white",
+                                    }}
+                                >
+                                    Contact
+                                </NavLink>
+                            </Nav.Link>
 
                             <Nav.Link className="nav-menu">
                                 {

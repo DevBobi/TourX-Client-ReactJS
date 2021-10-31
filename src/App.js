@@ -18,6 +18,7 @@ import PlaceOrder from './components/Home/PlaceOrder/PlaceOrder';
 import Footer from './components/Shared/Footer/Footer';
 import About from './components/Home/About/About';
 import ManageOrders from './components/ManageOrders/ManageOrders';
+import Contact from './components/Home/Contact/Contact';
 
 function App() {
   return (
@@ -32,11 +33,14 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route path="/about">
               <About></About>
             </Route>
-            <Route path="/login">
-              <Login></Login>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <Route path="/offerings">
               <Offerings></Offerings>
