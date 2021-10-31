@@ -51,6 +51,7 @@ const MyOrders = () => {
             </Row>
             {
                 bookedOrder.map(order => <Row
+                    key={order._id}
                     className="bg-secondary text-light rounded mb-2 py-5 text-start ps-5"
                 >
                     <Col className="py-3" xs={4} md={4} lg={4}>
