@@ -11,7 +11,7 @@ const ManageOrders = () => {
         fetch('https://gentle-island-49422.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [status]);
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete?');
@@ -34,12 +34,12 @@ const ManageOrders = () => {
     const updateStatus = (id) => {
 
         axios.put(`https://gentle-island-49422.herokuapp.com/updateOrder`, { id })
-            .then(res => console.log("Order Approved"))
+            .then(res => alert("Order Approved"))
             .then((data) => setStatus(true))
     };
 
     return (
-        <Container className="my-3">
+        <Container className="my-3 pb-5">
             <h2 className="py-3">Manage All Orders</h2>
             <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
                 <Col xs={4} md={4} lg={4}>

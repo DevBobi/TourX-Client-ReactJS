@@ -5,7 +5,7 @@ import './About.css'
 const About = () => {
     return (
         <div className="about-div">
-            <div className=" d-flex row align-items-center justify-content-between my-5">
+            <div className="  row align-items-center justify-content-between my-5">
                 <div className="col-lg-6 col-sm-12 mb-4 about-text">
                     <div className="about-content px-5 ">
                         <h4 className="mb-1 text-info fw-normal">About Us</h4>
