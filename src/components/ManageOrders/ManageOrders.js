@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Row, Table } from 'react-bootstrap';
+import { Button, ButtonGroup, Col, Container, Row, Table } from 'react-bootstrap';
 
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
+    const [status, setStatus] = useState(false);
 
     useEffect(() => {
         fetch('https://gentle-island-49422.herokuapp.com/orders')
@@ -29,40 +31,64 @@ const ManageOrders = () => {
         }
     };
 
+    const updateStatus = (id) => {
+
+        axios.put(`https://gentle-island-49422.herokuapp.com/updateOrder`, { id })
+            .then(res => console.log("Order Approved"))
+            .then((data) => setStatus(true))
+    };
+
     return (
-        <div className="container my-5">
-            <h2>Manage All<span className="text-danger fw-bolder">Orders</span></h2>
-            <h2>Total orders: {orders.length}</h2>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Order Name</th>
-                        <th>Address</th>
-                        <th>Order Date</th>
-                        <th>User</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                {orders.map((order, index) => (
-                    <tbody
-                        key={order._id}>
-                        <tr>
-                            <td>{index}</td>
-                            <td>{order?.booked?.title}</td>
-                            <td>{order?.address}</td>
-                            <td>{order?.date.slice(0, 25)}</td>
-                            <td>{order?.username}</td>
-                            <button
-                                onClick={() => handleDelete(order._id)}
-                                className="btn bg-danger p-2">
-                                Delete
-                            </button>
-                        </tr>
-                    </tbody>
-                ))}
-            </Table>
-        </div>
+        <Container className="my-3">
+            <h2 className="py-3">Manage All Orders</h2>
+            <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
+                <Col xs={4} md={4} lg={4}>
+                    <h5>Order Info</h5>
+                </Col>
+                <Col xs={4} md={4} lg={4}>
+                    <h5>Address</h5>
+                </Col>
+                <Col xs={4} md={4} lg={4}>
+                    <h5>Order Status</h5>
+                </Col>
+
+            </Row>
+            {
+                orders.map(order => <Row
+                    className="bg-secondary text-light rounded mb-2 py-5 pt-3 text-start ps-5"
+                >
+                    <Col className="py-3" xs={4} md={4} lg={4}>
+                        <p>Name: <small>{order?.booked?.title}</small></p>
+                        <p>Description: <small>{order?.booked?.description}</small></p>
+                    </Col>
+                    <Col className="py-3" xs={4} md={4} lg={4}>
+                        <p>Address: {order?.address}</p>
+                        <p>Contact: {order?.phone}</p>
+                        <p>Email: {order?.email}</p>
+                        <p>Date: {order?.date}</p>
+                    </Col>
+                    <Col className="py-3" xs={4} md={4} lg={4}>
+                        <p>Status: {order?.status}</p>
+                        <Button
+                            onClick={() => handleDelete(order._id)}
+                            variant="danger">
+                            Remove Order
+                        </Button>
+                        {
+                            (order.status === "Approved") ? <Button
+                                variant="info">
+                                {order?.status}
+                            </Button> :
+                                <Button
+                                    onClick={() => updateStatus(order._id)}
+                                    variant="info">
+                                    {order?.status}
+                                </Button>
+                        }
+                    </Col>
+                </Row>)
+            }
+        </Container>
 
 
     );

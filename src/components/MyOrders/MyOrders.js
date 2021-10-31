@@ -34,8 +34,8 @@ const MyOrders = () => {
     };
 
     return (
-        <Container className="my-5">
-            <h2>Order Summary</h2>
+        <Container className="my-4">
+            <h2 className="py-3">Order Summary</h2>
             <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
                 <Col xs={4} md={4} lg={4}>
                     <h5>Order Info</h5>
