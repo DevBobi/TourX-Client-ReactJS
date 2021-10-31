@@ -28,7 +28,7 @@ const Footer = () => {
                     <div className="col text-light mt-3">
                         <small className="m-0">About Us</small><br />
                         <small className="m-0">Read our blog</small><br />
-                        <small className="m-0">Add your restaurant</small><br />
+                        <small className="m-0">Mail Us</small><br />
                     </div>
                     <div className="col text-light mt-3">
                         <small className="m-0">Get help</small><br />
