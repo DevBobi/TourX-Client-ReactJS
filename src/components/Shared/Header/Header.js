@@ -33,10 +33,7 @@ const Header = () => {
                                 <NavLink as={Link}
                                     to="/"
                                     style={{ textDecoration: "none", color: "#ff9e32" }}
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "white",
-                                    }}
+
                                 >
                                     Home
                                 </NavLink>
@@ -46,10 +43,7 @@ const Header = () => {
                                 <NavLink as={Link}
                                     to="/about"
                                     style={{ textDecoration: "none", color: "#ff9e32" }}
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "white",
-                                    }}
+
                                 >
                                     About
                                 </NavLink>
@@ -58,10 +52,7 @@ const Header = () => {
                                 <NavLink as={Link}
                                     to="/contact"
                                     style={{ textDecoration: "none", color: "#ff9e32" }}
-                                    activeStyle={{
-                                        fontWeight: "bold",
-                                        color: "white",
-                                    }}
+
                                 >
                                     Contact
                                 </NavLink>

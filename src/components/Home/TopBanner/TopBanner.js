@@ -25,7 +25,7 @@ const TopBanner = () => {
                         alt="Second slide"
                     />
                     <Carousel.Caption className=" text-top car-style2">
-                        <h2>Get Ready To Travel<br /> <h1 className="text-warning">The World</h1></h2>
+                        <h2>Get Ready To Travel<br /> <p className="text-warning fs-1">The World</p></h2>
                         <p className="text-end">A journey with 1000 miles starts with a single step.</p>
                     </Carousel.Caption>
                 </Carousel.Item>

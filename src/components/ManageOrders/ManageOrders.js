@@ -55,20 +55,21 @@ const ManageOrders = () => {
             </Row>
             {
                 orders.map(order => <Row
+                    key={order._id}
                     className="bg-secondary text-light rounded mb-2 py-5 pt-3 text-start ps-5"
                 >
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p>Name: <small>{order?.booked?.title}</small></p>
-                        <p>Description: <small>{order?.booked?.description}</small></p>
+                        <p><span className="text-dark">Name:</span> <small>{order?.booked?.title}</small></p>
+                        <p><span className="text-dark">Description:</span> <small>{order?.booked?.description}</small></p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p>Address: {order?.address}</p>
-                        <p>Contact: {order?.phone}</p>
-                        <p>Email: {order?.email}</p>
-                        <p>Date: {order?.date}</p>
+                        <p><span className="text-dark">Address:</span> {order?.address}</p>
+                        <p><span className="text-dark">Contact:</span> {order?.phone}</p>
+                        <p><span className="text-dark">Email:</span> {order?.email}</p>
+                        <p><span className="text-dark">Date:</span> {order?.date.slice(0, 25)}</p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p>Status: {order?.status}</p>
+                        <p><span className="text-dark">Status:</span> {order?.status}</p>
                         <Button
                             onClick={() => handleDelete(order._id)}
                             variant="danger">

@@ -19,7 +19,7 @@ const Offerings = () => {
             <Row xs={1} lg={4} md={3} className="gy-4">
                 {
                     services.map(service => <Service
-                        key={service.id}
+                        key={service._id}
                         service={service}
                     ></Service>)
                 }

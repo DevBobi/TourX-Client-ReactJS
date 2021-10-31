@@ -35,7 +35,8 @@ const MyOrders = () => {
 
     return (
         <Container className="my-4 pb-5">
-            <h2 className="py-3">My Orders</h2>
+            <h2 className="pt-3">My Orders</h2>
+            <h3>Total Orders: {orders.length}</h3>
             <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
                 <Col xs={4} md={4} lg={4}>
                     <h5>Order Info</h5>
