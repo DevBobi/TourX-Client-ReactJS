@@ -1,0 +1,16 @@
+.car-style h2{
+    font-size:50px;
+    text-align: center;
+    padding-bottom: 200px;
+    color: rgb(37, 37, 37);
+}
+
+.car-style2{
+    padding-bottom: 40px;
+}
+
+.car-style2 h2{
+    text-align: end;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80px;
+}

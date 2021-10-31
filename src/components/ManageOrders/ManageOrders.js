@@ -26,12 +26,12 @@ const ManageOrders = () => {
                         setOrders(remainingOrders);
                     }
                 })
-            console.log(id);
         }
     };
+
     return (
         <div className="container my-5">
-            <h1>Manage All<span className="text-danger fw-bolder">Orders</span></h1>
+            <h2>Manage All<span className="text-danger fw-bolder">Orders</span></h2>
             <h2>Total orders: {orders.length}</h2>
             <Table striped bordered hover>
                 <thead>
@@ -51,7 +51,7 @@ const ManageOrders = () => {
                             <td>{index}</td>
                             <td>{order?.booked?.title}</td>
                             <td>{order?.address}</td>
-                            <td>{order?.date}</td>
+                            <td>{order?.date.slice(0, 25)}</td>
                             <td>{order?.username}</td>
                             <button
                                 onClick={() => handleDelete(order._id)}

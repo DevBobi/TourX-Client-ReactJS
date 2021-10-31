@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/foooter.png';
+import logo from '../../../assets/logo1.png';
 import useAuth from '../../../hooks/useAuth';
 import { FiLogOut } from "react-icons/fi";
 import { FaSignInAlt } from "react-icons/fa";
@@ -61,41 +61,26 @@ const Header = () => {
                                         <div>
                                             <NavDropdown title={user?.displayName} id="basic-nav-dropdown">
 
-                                                <NavDropdown.Item href="#action/3.3">
+                                                <NavDropdown.Item >
                                                     <NavLink as={Link}
-                                                        className=""
                                                         to="/myOrders"
                                                         style={{ textDecoration: "none", color: "black" }}
-                                                        activeStyle={{
-                                                            fontWeight: "bolder",
-                                                            color: "goldenRod",
-                                                        }}
                                                     >
                                                         My Orders
                                                     </NavLink>
                                                 </NavDropdown.Item>
-                                                <NavDropdown.Item href="#action/3.3">
+                                                <NavDropdown.Item >
                                                     <NavLink as={Link}
-                                                        className=""
                                                         to="/manageOrders"
                                                         style={{ textDecoration: "none", color: "black" }}
-                                                        activeStyle={{
-                                                            fontWeight: "bolder",
-                                                            color: "goldenRod",
-                                                        }}
                                                     >
-                                                        Manage Orders
+                                                        Manage All Orders
                                                     </NavLink>
                                                 </NavDropdown.Item>
-                                                <NavDropdown.Item href="#action/3.3">
+                                                <NavDropdown.Item >
                                                     <NavLink as={Link}
-                                                        className=""
                                                         to="/addService"
                                                         style={{ textDecoration: "none", color: "black" }}
-                                                        activeStyle={{
-                                                            fontWeight: "bolder",
-                                                            color: "goldenRod",
-                                                        }}
                                                     >
                                                         Add Service
                                                     </NavLink>

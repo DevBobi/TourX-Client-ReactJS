@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div className="about-div">
             <div className=" d-flex align-items-center justify-content-between my-4">
-                <div className="col-lg-6 col-sm-12 mb-4">
+                <div className="col-lg-7 col-sm-12 mb-4">
                     <div className="about-content px-5 ">
                         <h4 className="mb-1 text-info fw-normal">About Tour-X</h4>
                         <h2 className="text-warning">We're truely dedicated to make your travel experience best</h2>
@@ -18,9 +18,9 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-lg-6 col-sm-12">
+                <div className="col-lg-5 col-sm-12">
                     <div>
-                        <img src={aboutImg} className="img-fluid w-75" alt="" />
+                        <img src={aboutImg} className=" w-75" alt="" />
                     </div>
                 </div>
             </div>
