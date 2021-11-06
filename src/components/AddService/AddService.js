@@ -22,10 +22,10 @@ const AddService = () => {
             <h2 className="my-5">Please add a service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("title",)}
-                    placeholder="Name" />
-                <input {...register("description")} placeholder="Description" />
-                <input type="number" {...register("price")} placeholder="Price" />
-                <input {...register("img")} placeholder="Img Url" />
+                    placeholder="Name" required />
+                <input {...register("description")} placeholder="Description" required />
+                <input type="number" {...register("price")} placeholder="Price" required />
+                <input {...register("img")} placeholder="Img Url" required />
                 <input type="submit" />
             </form>
         </div>

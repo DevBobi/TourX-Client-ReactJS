@@ -39,8 +39,8 @@ const ManageOrders = () => {
     };
 
     return (
-        <Container className="my-3 pb-5">
-            <h2 className="py-3">Manage All Orders</h2>
+        <Container className="my-5 ">
+            <h2 className="py-3 display-3">All Orders</h2>
             <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
                 <Col xs={4} md={4} lg={4}>
                     <h5>Order Info</h5>
@@ -56,24 +56,24 @@ const ManageOrders = () => {
             {
                 orders.map(order => <Row
                     key={order._id}
-                    className="bg-secondary text-light rounded mb-2 py-5 pt-3 text-start ps-5"
+                    className="bg-secondary text-light rounded mb-2 py-5 pt-3 text-start ps-lg-5 "
                 >
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p><span className="text-dark">Name:</span> <small>{order?.booked?.title}</small></p>
-                        <p><span className="text-dark">Description:</span> <small>{order?.booked?.description}</small></p>
+                        <p>Name: {order?.booked?.title}</p>
+                        <p>Price: ${order?.booked?.price}</p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p><span className="text-dark">Address:</span> {order?.address}</p>
-                        <p><span className="text-dark">Contact:</span> {order?.phone}</p>
-                        <p><span className="text-dark">Email:</span> {order?.email}</p>
-                        <p><span className="text-dark">Date:</span> {order?.date.slice(0, 25)}</p>
+                        <p>Address: {order?.address}</p>
+                        <p>Contact: {order?.phone}</p>
+                        <p>Email: {order?.email}</p>
+                        <p>Date: {order?.date.slice(0, 25)}</p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <p><span className="text-dark">Status:</span> {order?.status}</p>
+                        <p><span >Status:</span> {order?.status}</p>
                         <Button
                             onClick={() => handleDelete(order._id)}
                             variant="danger">
-                            Remove Order
+                            Delete
                         </Button>
                         {
                             (order.status === "Approved") ? <Button

@@ -45,11 +45,15 @@ const PlaceOrder = () => {
                     <input
                         {...register("username")}
                         type="text"
-                        value={user.displayName} />
+                        value={user.displayName}
+                        className="p-2 m-2"
+                    />
                     <input
                         {...register("email",)}
                         type="email"
-                        value={user?.email} />
+                        value={user?.email}
+                        className="p-2 m-2"
+                    />
                     <input
                         {...register("date", { required: true })}
                         placeholder="date"
@@ -70,15 +74,12 @@ const PlaceOrder = () => {
                     <Button variant="secondary" type="submit">Place Order  </Button>
                 </form>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-                <div className=" col-sm-12 my-4">
+            <div className="col-lg-4 col-md-6 col-sm-12 my-4">
+                <div className=" col-sm-12 ">
                     <img className="my-1 img-fluid" src={singleService?.img} alt="" />
                 </div>
                 <h2>{singleService?.title}</h2>
                 <p>{singleService?.description}</p>
-                {/* <Link to="/" style={{ textDecoration: 'none' }}>
-                    <Button variant="secondary">Go Home</Button>
-                </Link> */}
             </div>
         </div>
     );

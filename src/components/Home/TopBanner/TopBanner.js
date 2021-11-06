@@ -15,7 +15,7 @@ const TopBanner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className="text-light text-start mb-5 car-style">
-                        <h2>Enjoy The Travel With <br /> <span className="text-light">Tour-X</span></h2>
+                        <h2>Enjoy The Travel With <br /> <span className="text-light display-1 fw-bolder">Tour-X</span></h2>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>

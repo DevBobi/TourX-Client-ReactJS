@@ -34,9 +34,8 @@ const MyOrders = () => {
     };
 
     return (
-        <Container className="my-4 pb-5">
-            <h2 className="pt-3">My Orders</h2>
-            <h3>Total Orders: {orders.length}</h3>
+        <Container className="my-5  ">
+            <h2 className="pb-2 display-3">My Orders</h2>
             <Row className="bg-warning rounded my-3 py-3 text-start ps-5">
                 <Col xs={4} md={4} lg={4}>
                     <h5>Order Info</h5>
@@ -52,19 +51,20 @@ const MyOrders = () => {
             {
                 bookedOrder.map(order => <Row
                     key={order._id}
-                    className="bg-secondary text-light rounded mb-2 py-5 text-start ps-5"
+                    className="bg-secondary text-light rounded mb-2 py-5 text-start ps-lg-5 "
                 >
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <h6>Name: <small>{order?.booked?.title}</small></h6>
-                        <h6>Description: <small>{order?.booked?.description}</small></h6>
+                        <p>Name: {order?.booked?.title}</p>
+                        <p>Price: ${order?.booked?.price}</p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <h6>Address: {order?.address}</h6>
-                        <h6>Contact: {order?.phone}</h6>
-                        <h6>Email: {order?.email}</h6>
+                        <p>Address: {order?.address}</p>
+                        <p>Contact: {order?.phone}</p>
+                        <p>Email: {order?.email}</p>
+                        <p>Date: {order?.date.slice(0, 25)}</p>
                     </Col>
                     <Col className="py-3" xs={4} md={4} lg={4}>
-                        <h6>Status: {order?.status}</h6>
+                        <p>Status: {order?.status}</p>
                         <Button
                             onClick={() => handleDelete(order._id)}
                             variant="danger">

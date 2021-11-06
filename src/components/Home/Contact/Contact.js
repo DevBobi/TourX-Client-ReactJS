@@ -6,9 +6,9 @@ import { AiOutlinePhone } from "react-icons/ai";
 
 const Contact = () => {
     return (
-        <div className="d-flex row m-3 justify-content-around">
+        <div className="d-flex row m-lg-5 justify-content-around">
             <div className="col-lg-8 col-sm-12 px-5 my-5 text-start">
-                <h2>Contact Us</h2>
+                <h2 >Contact Us</h2>
                 <div >
                     <FloatingLabel
                         controlId="floatingInput"
